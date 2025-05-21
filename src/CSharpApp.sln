@@ -15,19 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpApp.Core", "CSharpApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpApp.Infrastructure", "CSharpApp.Infrastructure\CSharpApp.Infrastructure.csproj", "{1D24449A-3896-48C5-B007-A33F8479456C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpApp.Tests", "CSharpApp.Tests\CSharpApp.Tests.csproj", "{50A3AB87-C605-4FA1-8179-741844E4D7AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{E3BB3FDA-5F80-48B0-B0A5-B29F89814132} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
-		{5AEEC8AB-02B6-4051-A6EF-B785FC773E87} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
-		{75D8AC89-79D6-4C05-88C5-E2BC6445F202} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
-		{1D24449A-3896-48C5-B007-A33F8479456C} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E3BB3FDA-5F80-48B0-B0A5-B29F89814132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -46,5 +39,19 @@ Global
 		{1D24449A-3896-48C5-B007-A33F8479456C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D24449A-3896-48C5-B007-A33F8479456C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D24449A-3896-48C5-B007-A33F8479456C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A3AB87-C605-4FA1-8179-741844E4D7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A3AB87-C605-4FA1-8179-741844E4D7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A3AB87-C605-4FA1-8179-741844E4D7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A3AB87-C605-4FA1-8179-741844E4D7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3BB3FDA-5F80-48B0-B0A5-B29F89814132} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
+		{5AEEC8AB-02B6-4051-A6EF-B785FC773E87} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
+		{75D8AC89-79D6-4C05-88C5-E2BC6445F202} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
+		{1D24449A-3896-48C5-B007-A33F8479456C} = {09E4065D-8EA9-43F4-AB9C-5E70ACC35F88}
+		{50A3AB87-C605-4FA1-8179-741844E4D7AE} = {AEEC3AD8-B5EE-4590-8714-024364B7557A}
 	EndGlobalSection
 EndGlobal
