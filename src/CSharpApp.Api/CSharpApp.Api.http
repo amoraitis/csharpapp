@@ -1,7 +1,10 @@
 @HostAddress = http://localhost:5225
 @Version = v1
+@id = 77 
 
-GET {{HostAddress}}/api/{{Version}}/getproducts
+GET {{HostAddress}}/api/{{Version}}/products
 Accept: application/json
 
 ###
+GET {{HostAddress}}/api/{{Version}}/products/{{id}}
+Accept: application/json
