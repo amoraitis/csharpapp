@@ -1,5 +1,4 @@
-using CSharpApp.Core.Dtos;
-using Microsoft.AspNetCore.Mvc;
+using CSharpApp.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,34 +25,8 @@ if (app.Environment.IsDevelopment())
 
 var versionedEndpointRouteBuilder = app.NewVersionedApi();
 
-versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/products/", async (IProductsService productsService) =>
-    {
-        var products = await productsService.GetProducts();
-        return products;
-    })
-    .WithName("GetProducts")
-    .HasApiVersion(1.0);
-
-versionedEndpointRouteBuilder.MapGet(@"api/v{version:apiVersion}/products/{id}", async (int id, IProductsService productsService) =>
-    {
-        var products = await productsService.GetProduct(id);
-        return products;
-    })
-    .WithName("GetProduct")
-    .HasApiVersion(1.0);
-
-versionedEndpointRouteBuilder.MapPost("api/v{version:apiVersion}/products/", async (Product requestData, IProductsService productsService) =>
-    {
-        var product = await productsService.CreateProduct(requestData);
-
-        if (product is null)
-        {
-            return Results.BadRequest("Could not create product!");
-        }
-
-        return Results.CreatedAtRoute("GetProduct", new { version = "1.0", id = product }, requestData);
-    })
-    .WithName("CreateProduct")
-    .HasApiVersion(1.0);
+versionedEndpointRouteBuilder
+    .MapProductEndpoints()
+    .MapCategoryEndpoints();
 
 app.Run();
