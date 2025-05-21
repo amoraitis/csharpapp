@@ -1,5 +1,7 @@
 using CSharpApp.Api.Endpoints;
 using CSharpApp.Api.Middleware;
+using CSharpApp.Application.Auth;
+using CSharpApp.Core.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddDefaultConfiguration();
 builder.Services.AddHttpConfiguration();
 builder.Services.AddProblemDetails();
 builder.Services.AddApiVersioning();
+
+// Register JwtAuthService
+builder.Services.AddSingleton<IJwtAuthService, JwtAuthService>();
 
 var app = builder.Build();
 

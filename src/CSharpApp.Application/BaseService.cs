@@ -7,7 +7,9 @@ namespace CSharpApp.Application
         private readonly ILogger<BaseService> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        internal BaseService(ILogger<BaseService> logger, IHttpClientFactory httpClientFactory)
+        internal BaseService(
+            ILogger<BaseService> logger,
+            IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
             _httpClientFactory = httpClientFactory;
@@ -20,7 +22,7 @@ namespace CSharpApp.Application
             // TODO: Handle not found
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<T>(content);
+            var result = JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
             if (result is null)
             {
@@ -43,7 +45,7 @@ namespace CSharpApp.Application
             using var response = await httpClient.PostAsync(url, jsonContent);
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<TResponse>(content);
+            var result = JsonSerializer.Deserialize<TResponse>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
             if (result is null)
             {
